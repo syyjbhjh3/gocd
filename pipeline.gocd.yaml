@@ -1,0 +1,16 @@
+format_version: 10
+pipelines:
+  yjops-test-pipeline:
+    group: portal-adv
+    template: portal-template
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-d615934:
+        git: https://github.com/syyjbhjh3/yjOps.git
+        username: syyjbhjh7@gmail.com
+        shallow_clone: false
+        auto_update: true
+        branch: main
+        encrypted_password: AES:XXRuaSVp/mOUrsDJHTatrA==:zW9UfE13uxHZ/5iAGqJagA==
