@@ -25,16 +25,14 @@ pipelines:
             checkout:
               resources:
                 - ubuntu-agent
-              timeout: 0
               tasks:
                 - exec:
-                    command: ./build-deploy.sh init
+                    command: chmod 777 build-deploy.sh
                     run_if: passed
             gradle-build:
               resources:
                 - ubuntu-agent
-              timeout: 0
               tasks:
                 - exec:
-                    command: gradle build -x test
+                    command: ./build-deploy.sh init
                     run_if: passed
