@@ -33,10 +33,6 @@ pipelines:
                 - ubuntu-agent
               tasks:
                 - exec:
-                    command: /bin/bash
-                    arguments:
-                        - -c
-                        - |
-                          echo $PATH
-                          gradle -v
+                    command: ./build-deploy.sh
+                    arguments: build
                     run_if: passed
