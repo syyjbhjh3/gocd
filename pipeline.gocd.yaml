@@ -23,8 +23,10 @@ pipelines:
             allow_only_on_success: false
           jobs:
             checkout:
+              resources:
+                - ubuntu-agent
               timeout: 0
               tasks:
                 - exec:
-                    command: ls
+                    command: pwd
                     run_if: passed
