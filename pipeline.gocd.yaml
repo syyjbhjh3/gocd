@@ -1,16 +1,30 @@
 format_version: 10
 pipelines:
-  yjops-test-pipeline:
-    group: portal-adv
-    template: portal-template
+  test-pipeline:
+    group: portalGroup
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
     materials:
-      git-d615934:
+      git-f89a23f:
         git: https://github.com/syyjbhjh3/yjOps.git
-        username: syyjbhjh7@gmail.com
+        username: syyjbhjh7@gmailc.om
         shallow_clone: false
         auto_update: true
         branch: main
-        encrypted_password: AES:XXRuaSVp/mOUrsDJHTatrA==:zW9UfE13uxHZ/5iAGqJagA==
+        encrypted_password: AES:oGJocwHU6uH8yjx3jTNr4Q==:4q0EM+GYav/2N3ciPMliLA==
+    stages:
+      - build:
+          fetch_materials: true
+          keep_artifacts: false
+          clean_workspace: false
+          approval:
+            type: success
+            allow_only_on_success: false
+          jobs:
+            checkout:
+              timeout: 0
+              tasks:
+                - exec:
+                    command: ls
+                    run_if: passed
