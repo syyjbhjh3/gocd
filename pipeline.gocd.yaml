@@ -22,8 +22,11 @@ pipelines:
             type: success
             allow_only_on_success: false
           environment_variables:
-            GRADLE_HOME: "/go/build-tool/gradle-8.8"
-            PATH: "/go/build-tool/gradle-8.8/bin:$PATH"
+            M2_HOME: "/go/build-tool/apache-maven-3.9.8"
+            M2: "/go/build-tool/apache-maven-3.9.8/bin"
+            JAVA_HOME: "/go/build-tool/jdk8u382-b05-jre"
+            GRADLE_HOME: "/opt/gradle-8.8"
+            PATH: "/go/build-tool/apache-maven-3.9.8/bin:/go/build-tool/jdk8u382-b05-jre:/opt/gradle-8.8/bin:$PATH"
           jobs:
             checkout:
               resources:
