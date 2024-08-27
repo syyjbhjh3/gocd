@@ -27,12 +27,16 @@ pipelines:
                 - ubuntu-agent
               tasks:
                 - exec:
-                    command: chmod 777 build-deploy.sh
+                    command: ./build-deploy.sh
+                    arguments:
+                      - "init"
                     run_if: passed
             gradle-build:
               resources:
                 - ubuntu-agent
               tasks:
                 - exec:
-                    command: ./build-deploy.sh init
+                    command: ./build-deploy.sh
+                    arguments:
+                      - "build"
                     run_if: passed
