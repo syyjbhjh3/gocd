@@ -30,3 +30,11 @@ pipelines:
                 - exec:
                     command: pwd
                     run_if: passed
+            gradle-build:
+              resources:
+                - ubuntu-agent
+              timeout: 0
+              tasks:
+                - exec:
+                    command: gradle build -x test
+                    run_if: passed
