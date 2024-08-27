@@ -26,7 +26,7 @@ pipelines:
             M2: "/go/build-tool/apache-maven-3.9.8/bin"
             JAVA_HOME: "/go/build-tool/jdk8u382-b05-jre"
             GRADLE_HOME: "/go/build-tool/gradle-8.8"
-            PATH: "/go/build-tool/apache-maven-3.9.8/bin:/go/build-tool/jdk8u382-b05-jre:/go/build-tool/gradle-8.8/bin:$PATH"
+            PATH: "/go/build-tool/apache-maven-3.9.8/bin:/go/build-tool/jdk8u382-b05-jre:/go/build-tool/gradle-8.8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
           jobs:
             checkout:
               resources:
