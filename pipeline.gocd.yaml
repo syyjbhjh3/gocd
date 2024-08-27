@@ -30,7 +30,10 @@ pipelines:
                 - ubuntu-agent
               tasks:
                 - exec:
-                    command: gradle
+                    command: /bin/bash
                     arguments:
-                      - build -x test
+                        - -c
+                        - |
+                          echo $PATH
+                          gradle -v
                     run_if: passed
