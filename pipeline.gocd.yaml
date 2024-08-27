@@ -35,8 +35,5 @@ pipelines:
                 - exec:
                     command: ./build-deploy.sh
                     arguments:
-                      - -c
-                      - |
-                        echo "PATH: $PATH"
-                        ./build-deploy.sh build
+                      - build
                     run_if: passed
