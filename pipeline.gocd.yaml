@@ -27,16 +27,10 @@ pipelines:
                 - ubuntu-agent
               tasks:
                 - exec:
-                    command: ./build-deploy.sh
+                    command: gradle
                     arguments:
-                      - "init"
+                      - "build -x test"
                     run_if: passed
-            gradle-build:
-              resources:
-                - ubuntu-agent
-              tasks:
-                - exec:
-                    command: ./build-deploy.sh
-                    arguments:
-                      - "build"
-                    run_if: passed
+              environment_variables:
+                GRADLE_HOME: "/go/build-tool/gradle-8.8"
+                PATH: "/go/build-tool/gradle-8.8/bin:$PATH"
