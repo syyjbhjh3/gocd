@@ -8,7 +8,7 @@ pipelines:
     materials:
       git-f89a23f:
         git: https://github.com/syyjbhjh3/yjOps.git
-        username: syyjbhjh7@gmailc.om
+        username: syyjbhjh7@gmail.com
         shallow_clone: false
         auto_update: true
         branch: main
@@ -28,7 +28,7 @@ pipelines:
               timeout: 0
               tasks:
                 - exec:
-                    command: pwd
+                    command: ./build-deploy.sh init
                     run_if: passed
             gradle-build:
               resources:
