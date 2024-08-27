@@ -21,6 +21,9 @@ pipelines:
           approval:
             type: success
             allow_only_on_success: false
+          environment_variables:
+            GRADLE_HOME: "/go/build-tool/gradle-8.8"
+            PATH: "/go/build-tool/gradle-8.8/bin:$PATH"
           jobs:
             checkout:
               resources:
@@ -31,6 +34,3 @@ pipelines:
                     arguments:
                       - "build -x test"
                     run_if: passed
-              environment_variables:
-                GRADLE_HOME: "/go/build-tool/gradle-8.8"
-                PATH: "/go/build-tool/gradle-8.8/bin:$PATH"
